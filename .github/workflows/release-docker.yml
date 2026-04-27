@@ -31,7 +31,7 @@ jobs:
 
       - name: Clone and build frontend
         run: |
-          git clone https://github.com/komari-monitor/komari-web web
+          git clone --branch radix --single-branch https://github.com/iamsxm/komari-web web
           cd web
           npm install
           npm run build
@@ -49,7 +49,7 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v5
         with:
-          go-version: "1.23"
+          go-version-file: go.mod
 
       - name: Install Zig
         run: |
